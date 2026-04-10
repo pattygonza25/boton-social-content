@@ -1,0 +1,24 @@
+{
+  "name": "boton-social-content",
+  "version": "1.0.0",
+  "description": "Este repositorio contiene los diseños HTML de contenido social de Bot-On, organizados por semana.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pattygonza25/boton-social-content.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/pattygonza25/boton-social-content/issues"
+  },
+  "homepage": "https://github.com/pattygonza25/boton-social-content#readme",
+  "dependencies": {
+    "puppeteer": "^24.40.0"
+  }
+}
