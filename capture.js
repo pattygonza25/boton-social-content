@@ -22,11 +22,6 @@ const files = [
     const url = `file://${path.resolve(__dirname, file.html)}`;
     await page.goto(url, { waitUntil: 'networkidle0' });
 
-    await page.evaluate((logoPath7, logoPath8) => {
-      document.querySelectorAll('img[src="Recurso_7.png"]').forEach(img => img.src = logoPath7);
-      document.querySelectorAll('img[src="Recurso_8.png"]').forEach(img => img.src = logoPath8);
-    }, `file://${path.join(__dirname, 'Recurso_7.png')}`, `file://${path.join(__dirname, 'Recurso_8.png')}`);
-
     const canvas = await page.$('.canvas');
     await canvas.screenshot({ path: file.png });
 
