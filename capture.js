@@ -22,6 +22,18 @@ const files = [
     const url = `file://${path.resolve(__dirname, file.html)}`;
     await page.goto(url, { waitUntil: 'networkidle0' });
 
+    await page.evaluate((imgPath) => {
+      document.querySelectorAll('*').forEach(el => {
+        const bg = window.getComputedStyle(el).backgroundImage;
+        if (bg.includes('hijo_cuidador.jpg')) {
+          el.style.backgroundImage = `url('${imgPath}/hijo_cuidador.jpg')`;
+        }
+        if (bg.includes('adultomayor.jpg')) {
+          el.style.backgroundImage = `url('${imgPath}/adultomayor.jpg')`;
+        }
+      });
+    }, `file://${__dirname}`);
+
     const canvas = await page.$('.canvas');
     await canvas.screenshot({ path: file.png });
 
